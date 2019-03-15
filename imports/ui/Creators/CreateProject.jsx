@@ -114,7 +114,7 @@ class CreateProject extends Component {
         <NavBar/>
         <div className="container2">
           <form id="contact" className="form" onSubmit={this.handleSubmit}>
-            <h3 id="publica">Publica tu proyecto</h3>
+            <h3 id="publica">Publica tu palabra</h3>
             {/*<h4>Contact us for custom quote</h4>*/}
             <fieldset>
               <input type="text" className="form-control" id="nomProyecto"

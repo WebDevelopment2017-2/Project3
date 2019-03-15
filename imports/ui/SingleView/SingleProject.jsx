@@ -111,7 +111,7 @@ class SingleProject extends Component {
 
               {/*<!-- Author -->*/}
               <p className="lead">
-                by {' '+this.state.task.username}
+                publicada por: {' '+this.state.task.username}
               </p>
 
               <hr/>

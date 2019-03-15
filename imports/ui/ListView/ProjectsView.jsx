@@ -59,7 +59,7 @@ class ProjectsView extends Component {
         <Captcha/>
         <div className="row my-4">
           <div className="col-lg-4">
-            <img className="img-fluid rounded" src="https://i.ibb.co/4ZsnhDC/asd.jpg" alt=""/>
+            <img className="img-fluid rounded imageMain" src="https://i.ibb.co/4ZsnhDC/asd.jpg" alt=""/>
           </div>
           <div className="col-lg-8">
             <br/>
