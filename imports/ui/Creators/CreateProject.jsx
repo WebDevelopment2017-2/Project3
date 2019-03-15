@@ -128,7 +128,14 @@ class CreateProject extends Component {
                      aria-labelledby="publica" required
                      value={this.state.description}
                      onChange={(event) => this.setState({description: event.target.value})}
-                     placeholder="Significado..."/>
+                     placeholder="Significado indígena..."/>
+            </fieldset>
+            <fieldset>
+              <input type="text" className="form-control" id="slogan"
+                     aria-labelledby="publica" required
+                     value={this.state.slogan}
+                     onChange={(event) => this.setState({slogan: event.target.value})}
+                     placeholder="Significado cotidiano..."/>
             </fieldset>
             {/*<fieldset>*/}
               {/*<input type="text" className="form-control" id="description"*/}

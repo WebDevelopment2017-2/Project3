@@ -126,7 +126,11 @@ class SingleProject extends Component {
                     <hr/>
 
                       {/*<!-- Post Content -->*/}
-                      <h3>Definición:</h3><p className="lead">{this.state.task.description}</p>
+                      <h3>Definición indígena:</h3><p className="lead">{this.state.task.description}</p>
+
+              <hr/>
+
+              <h3>Definición cotidiana:</h3><p className="lead">{this.state.task.slogan}</p>
 
                       <hr/>
 
@@ -139,7 +143,7 @@ class SingleProject extends Component {
                                 <label htmlFor="txa" style={{color:'white'}}> text</label>
                                 <textarea id="txa" value={this.state.value} className="form-control" required rows="3" onChange={(event) => this.setState({value: event.target.value})}></textarea>
                               </div>
-                              <button type="submit" className="btn btn-primary" style={{color:'white', backgroundColor:'black'}}>Submit</button>
+                              <button type="submit" className="btn btn-primary" style={{color:'white', backgroundColor:'black'}}>Enviar</button>
                             </form>
                           </div>
                         </div>
@@ -161,7 +165,7 @@ class SingleProject extends Component {
                   <div className="card-body">
                     <div className="row">
                       <div className="col-lg-12">
-                        <a type="submit" onClick={() => this.deleteProject()} id="deleteProjectButt" className="btn-default">Eliminar palabra</a>
+                        <a type="submit" onClick={() => this.deleteProject()} id="deleteProjectButt">Eliminar palabra</a>
                       </div>
                     </div>
                   </div>
