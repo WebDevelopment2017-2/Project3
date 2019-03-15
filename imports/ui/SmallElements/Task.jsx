@@ -15,15 +15,14 @@ export default class Task extends Component {
     });
 
     return (
-      <div className="col-md-3 mb-3">
+      <div className="col-md-4 mb-4">
         <div className="card h-100">
           <div className="card-body">
             <h2 className="card-title">{this.props.task.name}</h2>
-            <img className="card-img-top" src={this.props.task.thumbnail} width="200px" alt="Imagen descriptiva proyecto"/>
-            <p className="card-text">{this.props.task.slogan}</p>
+            <p className="card-text crop">{this.props.task.slogan}</p>
           </div>
           <div className="card-footer">
-            <Link onClick={() => Session.set('projectId', this.props.task._id)} to={{pathname: '/projects/view/' + this.props.task.name, query: this.props.task}} className="btn btn-primary moreInfoButton">Ver proyecto</Link>
+            <Link onClick={() => Session.set('projectId', this.props.task._id)} to={{pathname: '/projects/view/' + this.props.task.name, query: this.props.task}} className="btn btn-primary moreInfoButton">Ver discusión</Link>
           </div>
         </div>
       </div>

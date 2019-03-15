@@ -62,7 +62,6 @@ class CreateProject extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.state.requirements = this.state.value;
     let b = this;
     Meteor.call('tasks.insert', this.state, function (error, result) {
       if (error) {
@@ -122,51 +121,51 @@ class CreateProject extends Component {
                      aria-labelledby="publica" required
                      value={this.state.name}
                      onChange={(event) => this.setState({name: event.target.value})}
-                     placeholder="Nombre..."/>
+                     placeholder="Palabra..."/>
             </fieldset>
             <fieldset>
               <input type="text" className="form-control" id="slogan"
                      aria-labelledby="publica" required
                      value={this.state.slogan}
                      onChange={(event) => this.setState({slogan: event.target.value})}
-                     placeholder="Slogan..."/>
+                     placeholder="Significado..."/>
             </fieldset>
-            <fieldset>
-              <input type="text" className="form-control" id="description"
-                     aria-labelledby="publica" required
-                     value={this.state.description}
-                     onChange={(event) => this.setState({description: event.target.value})}
-                     placeholder="Descripción..."/>
-            </fieldset>
-            <fieldset>
-              <label>Imagen:</label>
-              <Dropzone
-                multiple={false}
-                accept="image/*"
-                onDrop={this.onDrop.bind(this)}>
-                <p>Arrastra una imágen o haz click para seleccionar y subir un archivo.</p>
-              </Dropzone>
-            </fieldset>
-            <fieldset>
-              <div>
-                <label id="reqs"htmlFor="exampleInputEmail1">Lista de requerimientos de tu proyecto</label><br/>
-                {this.renderRequirements()}
-                <div style={{textAlign: 'center'}}>
-                  <input type='button' value='Agregar más' id="addMoreButton"
-                         onClick={this.addClick.bind(this)}/>
-                </div>
-              </div>
-            </fieldset>
-            <fieldset>
-              <label id="etp" htmlFor="exampleInputEmail1">Etapa actual de tu proyecto</label><br/>
-              <select aria-labelledby="etp" className="form-control" id="exampleSelect2" required
-                      onChange={(e) => this.state.stage = e.target.value}>
-                <option>Gestación</option>
-                <option>Puesta en Marcha</option>
-                <option>Desarrollo Inicial</option>
-                <option>Crecimiento y consolidación</option>
-              </select>
-            </fieldset>
+            {/*<fieldset>*/}
+              {/*<input type="text" className="form-control" id="description"*/}
+                     {/*aria-labelledby="publica" required*/}
+                     {/*value={this.state.description}*/}
+                     {/*onChange={(event) => this.setState({description: event.target.value})}*/}
+                     {/*placeholder="Descripción..."/>*/}
+            {/*</fieldset>*/}
+            {/*/!*<fieldset>*!/*/}
+              {/*/!*<label>Imagen:</label>*!/*/}
+              {/*/!*<Dropzone*!/*/}
+                {/*/!*multiple={false}*!/*/}
+                {/*/!*accept="image/*"*!/*/}
+                {/*/!*onDrop={this.onDrop.bind(this)}>*!/*/}
+                {/*/!*<p>Arrastra una imágen o haz click para seleccionar y subir un archivo.</p>*!/*/}
+              {/*/!*</Dropzone>*!/*/}
+            {/*/!*</fieldset>*!/*/}
+            {/*<fieldset>*/}
+              {/*<div>*/}
+                {/*<label id="reqs"htmlFor="exampleInputEmail1">Lista de requerimientos de tu proyecto</label><br/>*/}
+                {/*{this.renderRequirements()}*/}
+                {/*<div style={{textAlign: 'center'}}>*/}
+                  {/*<input type='button' value='Agregar más' id="addMoreButton"*/}
+                         {/*onClick={this.addClick.bind(this)}/>*/}
+                {/*</div>*/}
+              {/*</div>*/}
+            {/*</fieldset>*/}
+            {/*<fieldset>*/}
+              {/*<label id="etp" htmlFor="exampleInputEmail1">Etapa actual de tu proyecto</label><br/>*/}
+              {/*<select aria-labelledby="etp" className="form-control" id="exampleSelect2" required*/}
+                      {/*onChange={(e) => this.state.stage = e.target.value}>*/}
+                {/*<option>Gestación</option>*/}
+                {/*<option>Puesta en Marcha</option>*/}
+                {/*<option>Desarrollo Inicial</option>*/}
+                {/*<option>Crecimiento y consolidación</option>*/}
+              {/*</select>*/}
+            {/*</fieldset>*/}
             <fieldset>
               <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Publicar
               </button>

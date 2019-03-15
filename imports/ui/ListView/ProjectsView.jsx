@@ -23,7 +23,7 @@ class ProjectsView extends Component {
     });
   }
 
-  renderTasks() {
+  renderWords() {
     let filteredTasks = this.props.tasks;
     if (this.state.hideCompleted) {
       filteredTasks = filteredTasks.filter(task => !task.checked);
@@ -58,27 +58,35 @@ class ProjectsView extends Component {
         <NavBar/>
         <Captcha/>
         <div className="row my-4">
-          <div className="col-lg-8">
-            <img className="img-fluid rounded" src="http://www.goaugment.io/wp-content/uploads/2016/07/Innovation-is-an-Attitude.jpg" alt=""/>
-          </div>
           <div className="col-lg-4">
+            <img className="img-fluid rounded" src="https://i.ibb.co/4ZsnhDC/asd.jpg" alt=""/>
+          </div>
+          <div className="col-lg-8">
             <br/>
-            <h1>Proyectos activos</h1>
-            <i id="sl">Haz parte de la cultura innovadora Uniandina</i>
-            <p>Te presentamos los proyectos de innovación en desarrollo en la Universidad de los Andes.
-              ¡Puedes aportar en el desarrollo de estos proyectos comentando ideas, aportando recursos o te
-              puedes unir al equipo de trabajo!</p>
+            <h1>Diccionario de la lengua indígena</h1>
+            <i id="sl">Haz parte de la cultura inclusiva Uniandina</i>
+            <p>El proyecto tiene como finalidad que las personas comprendan el significado que tienen un conjunto de palabras, usadas a menudo en la cotidianidad, en la cultura indígena.
+              ​
+              ​<br/>
+              <b>¿En qué consiste el proyecto?</b>
+              ​​<br/>
+              En el menú Palabras aparecerá un conjunto de términos que día a día nosotros usamos, con su significado para los indígenas y con una imagen que representa a dicha palabra.
+              Dado que nuestro objetivo es conocer qué tanto conocen las personas lo que representan esos términos para esa cultura, en la parte inferior de cada palabra aparecerán dos botones para que indiques si realmente conocías o no su significado.
+              ​​<br/>
+              <b>¿Qué ocurre si no sabías? </b>
+              ​​<br/>
+              <b>Comenta</b> de manera breve lo que crees que podría significar para los indígenas. Como en todo, tienes derecho a equivocarte. </p>
           </div>
         </div>
 
         <div className="card text-white bg-secondary my-4 text-center">
           <div className="card-body" id="midbar">
-            <span className="text-white m-0">¡Participa en la construcción de proyectos innovadores! </span>
+            <span className="text-white m-0">¡Mira la lista de palabras más pupulares entre estudiantes! </span>
           </div>
         </div>
 
         <div className="row">
-          {this.renderTasks()}
+          {this.renderWords()}
         </div>
       </div>
     );

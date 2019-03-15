@@ -442,3 +442,11 @@ li {
 #deleteProjectButt:active {
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
 }
+.crop{
+    /*width:100px;*/
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    height:30px;
+    /*line-height:50px;*/
+}
