@@ -25,7 +25,7 @@ const NavBar = () => (
             <Link className="navBartext" id="createLink" to='/projects/create'>Agregar palabra</Link>
           </li>
           <li className="nav-item">
-            <Link className="navBartext" to='/ideas/create'>Buscar palabra</Link>
+            <Link className="navBartext" to='/projects'>Buscar palabra</Link>
           </li>
           {/*<li className="nav-item" style={{textAlign:'left'}}>*/}
           {/*<div id="loginWrapper" className="pull-left">*/}
