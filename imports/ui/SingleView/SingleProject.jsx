@@ -113,8 +113,7 @@ class SingleProject extends Component {
               <p className="lead">
                 publicada por: {' ' + this.state.task.username}
               </p>
-
-              <hr/>
+              
 
               {/*<!-- Preview Image -->*/}
               {/*<img className="img-fluid rounded" src={this.state.task.thumbnail} alt="Project image"/>*/}
