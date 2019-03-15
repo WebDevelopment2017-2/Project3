@@ -116,10 +116,6 @@ class SingleProject extends Component {
 
               <hr/>
 
-              {/*<!-- Date/Time -->*/}
-              <p>Creada: {new Date(this.state.task.createdAt).toDateString()}</p>
-
-
               {/*<!-- Preview Image -->*/}
               {/*<img className="img-fluid rounded" src={this.state.task.thumbnail} alt="Project image"/>*/}
 
