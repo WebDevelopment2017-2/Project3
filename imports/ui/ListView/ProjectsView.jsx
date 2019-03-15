@@ -67,7 +67,7 @@ class ProjectsView extends Component {
           </div>
           <div className="col-lg-8">
             <br/>
-            <h1>Diccionario de la lengua indígena</h1>
+            <h1>Diccionario de Colombianadas</h1>
             <i id="sl">Haz parte de la cultura inclusiva Uniandina</i>
             <p>El proyecto tiene como finalidad que las personas comprendan el significado que tienen un conjunto de palabras, usadas a menudo en la cotidianidad, en la cultura indígena.
               ​
