@@ -425,7 +425,7 @@ li {
     cursor: pointer !important;
     width: 90% !important;
     border: none !important;
-    background: #c82333 !important;
+    background-color: #c82333 !important;
     color: #FFF !important;
     margin: 0 0 5px !important;
     padding: 10px !important;
@@ -452,4 +452,11 @@ li {
 }
 .imageMain{
     margin-top: 80px;
+}
+#sendMailCreator{
+    color: white;
+    background-color:black !important;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    width: 100%;
 }
