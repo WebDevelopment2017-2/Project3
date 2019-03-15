@@ -124,10 +124,10 @@ class CreateProject extends Component {
                      placeholder="Palabra..."/>
             </fieldset>
             <fieldset>
-              <input type="text" className="form-control" id="slogan"
+              <input type="text" className="form-control" id="description"
                      aria-labelledby="publica" required
-                     value={this.state.slogan}
-                     onChange={(event) => this.setState({slogan: event.target.value})}
+                     value={this.state.description}
+                     onChange={(event) => this.setState({description: event.target.value})}
                      placeholder="Significado..."/>
             </fieldset>
             {/*<fieldset>*/}

@@ -19,7 +19,7 @@ export default class Task extends Component {
         <div className="card h-100">
           <div className="card-body">
             <h2 className="card-title">{this.props.task.name}</h2>
-            <p className="card-text crop">{this.props.task.slogan}</p>
+            <p className="card-text crop">{this.props.task.description}</p>
           </div>
           <div className="card-footer">
             <Link onClick={() => Session.set('projectId', this.props.task._id)} to={{pathname: '/projects/view/' + this.props.task.name, query: this.props.task}} className="btn btn-primary moreInfoButton">Ver discusión</Link>

@@ -53,8 +53,8 @@ class SingleProject extends Component {
 
   deleteProject() {
     confirmAlert({
-      title: '¿Seguro que quieres borrar este proyecto?',                        // Title dialog
-      message: 'Se eliminará el proyecto, los requerimientos y los comentarios.',               // Message dialog
+      title: '¿Seguro que quieres borrar esta palabra?',                        // Title dialog
+      message: 'Se eliminará la palabra junto con toda su discusión.',               // Message dialog
       // childrenElement: () => <div>Custom UI</div>,       // Custom UI or Component
       confirmLabel: 'Confirmar',                           // Text button confirm
       cancelLabel: 'Cancelar',                             // Text button cancel
@@ -117,23 +117,22 @@ class SingleProject extends Component {
               <hr/>
 
                 {/*<!-- Date/Time -->*/}
-                <p>Posted on {new Date(this.state.task.createdAt).toDateString()}</p>
+                <p>Creada: {new Date(this.state.task.createdAt).toDateString()}</p>
 
-                <hr/>
 
                   {/*<!-- Preview Image -->*/}
-                  <img className="img-fluid rounded" src={this.state.task.thumbnail} alt="Project image"/>
+                  {/*<img className="img-fluid rounded" src={this.state.task.thumbnail} alt="Project image"/>*/}
 
                     <hr/>
 
                       {/*<!-- Post Content -->*/}
-                      <p className="lead">{this.state.task.description}</p>
+                      <h3>Definición:</h3><p className="lead">{this.state.task.description}</p>
 
                       <hr/>
 
                         {/*<!-- Comments Form -->*/}
                         <div className="card my-4">
-                          <h5 className="card-header">Leave a Comment:</h5>
+                          <h5 className="card-header">Deja un comentario!</h5>
                           <div className="card-body">
                             <form onSubmit={this.handleSubmit}>
                               <div className="form-group">
@@ -162,7 +161,7 @@ class SingleProject extends Component {
                   <div className="card-body">
                     <div className="row">
                       <div className="col-lg-12">
-                        <a type="submit" onClick={() => this.deleteProject()} id="deleteProjectButt" className="btn-default">Eliminar proyecto</a>
+                        <a type="submit" onClick={() => this.deleteProject()} id="deleteProjectButt" className="btn-default">Eliminar palabra</a>
                       </div>
                     </div>
                   </div>
@@ -174,14 +173,13 @@ class SingleProject extends Component {
               { Meteor.user() ?
                 (
                 <div className="card my-4">
-                  <h5 className="card-header">Participar</h5>
+                  <h5 className="card-header">¿Algo no te gusta?</h5>
                   <div className="card-body">
                     <div className="row">
-                      <div className="col-lg-6">
+                      <div className="col-lg-12">
                         <a type="submit" href={"mailto:" + Meteor.user().emails[0].address}
-                           style={{color:'white', backgroundColor:'black'}}
-                           className="btn-default">Enviar
-                          mensaje</a>
+                           style={{color:'white', backgroundColor:'black', paddingTop: '3px', paddingBottom: '3px', width: '100%' }}
+                           className="btn-default">Enviar correo al creador</a>
                       </div>
                     </div>
                   </div>
@@ -190,31 +188,31 @@ class SingleProject extends Component {
               }
 
               {/*<!-- Requirements Widget -->*/}
-              <div className="card my-4">
-                <h5 className="card-header">Requerimientos</h5>
-                <div className="card-body">
-                  <div className="row">
-                    <div className="col-lg-12">
-                      <ul className="list-unstyled mb-12">
-                        {
-                          this.state.task.requirements.map((task,i) => {
-                            const currentUserId = this.props.currentUser && this.props.currentUser._id;
-                            // const showPrivateButton = task.owner === currentUserId;
-                            return (
+              {/*<div className="card my-4">*/}
+                {/*<h5 className="card-header">Requerimientos</h5>*/}
+                {/*<div className="card-body">*/}
+                  {/*<div className="row">*/}
+                    {/*<div className="col-lg-12">*/}
+                      {/*<ul className="list-unstyled mb-12">*/}
+                        {/*{*/}
+                          {/*this.state.task.requirements.map((task,i) => {*/}
+                            {/*const currentUserId = this.props.currentUser && this.props.currentUser._id;*/}
+                            {/*// const showPrivateButton = task.owner === currentUserId;*/}
+                            {/*return (*/}
 
-                                <li className="col-lg-12" style={{textAlign:'justify'}}>
-                                  {task}
-                                </li>
+                                {/*<li className="col-lg-12" style={{textAlign:'justify'}}>*/}
+                                  {/*{task}*/}
+                                {/*</li>*/}
 
 
-                            );
-                          })
-                        }
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                            {/*);*/}
+                          {/*})*/}
+                        {/*}*/}
+                      {/*</ul>*/}
+                    {/*</div>*/}
+                  {/*</div>*/}
+                {/*</div>*/}
+              {/*</div>*/}
             </div>
 
           </div>
