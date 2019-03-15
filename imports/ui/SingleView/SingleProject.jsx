@@ -260,7 +260,7 @@ class SingleProject extends Component {
                   ) : null
               }
 
-              {this.state.task.origen &&
+              {this.state.task.origin &&
               <div className="card my-4">
                 <h5 className="card-header">Origen</h5>
                 <div className="card-body">
