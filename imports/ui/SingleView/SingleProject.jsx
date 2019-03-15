@@ -165,7 +165,7 @@ class SingleProject extends Component {
                   <div className="card-body">
                     <div className="row">
                       <div className="col-lg-12">
-                        <a type="submit" onClick={() => this.deleteProject()} id="deleteProjectButt">Eliminar palabra</a>
+                        <a type="submit" onClick={() => this.deleteProject()} className="deleteProjectButt">Eliminar palabra</a>
                       </div>
                     </div>
                   </div>

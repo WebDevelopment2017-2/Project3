@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom';
 import {Meteor} from 'meteor/meteor';
 import NavBar from '../SmallElements/NavBar.jsx'
 import Captcha from "../SmallElements/Captcha";
+import SearchBar from "../SmallElements/SearchBar";
 
 // ProjectsView component - represents the whole app
 class ProjectsView extends Component {
@@ -84,6 +85,8 @@ class ProjectsView extends Component {
             <span className="text-white m-0">¡Mira la lista de palabras más pupulares entre estudiantes! </span>
           </div>
         </div>
+
+        <SearchBar/>
 
         <div className="row">
           {this.renderWords()}
