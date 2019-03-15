@@ -124,13 +124,36 @@ class SingleProject extends Component {
               {/*<img className="img-fluid rounded" src={this.state.task.thumbnail} alt="Project image"/>*/}
 
               <hr/>
+              <h3>Definición tradicional/RAE:</h3><p className="lead">{this.state.task.description}</p>
 
-              {/*<!-- Post Content -->*/}
-              <h3>Definición indígena:</h3><p className="lead">{this.state.task.description}</p>
+              { this.state.task.andes &&
+              <div>
+                <hr/>
+                <h3>Definición para la gente de los Andes:</h3><p className="lead">{this.state.task.andes}</p>
+              </div>}
 
-              <hr/>
 
-              <h3>Definición cotidiana:</h3><p className="lead">{this.state.task.slogan}</p>
+              { this.state.task.valle &&
+              <div>
+                <hr/>
+                <h3>Definición para la gente del Valle:</h3><p className="lead">{this.state.task.valle}</p>
+              </div>}
+
+
+              { this.state.task.yopal &&
+              <div>
+                <hr/>
+                <h3>Definición para la gente de Yopal:</h3><p className="lead">{this.state.task.yopal}</p>
+              </div>}
+
+
+              { this.state.task.cucuta &&
+              <div>
+                <hr/>
+                <h3>Definición para la gente de Cúcuta:</h3><p className="lead">{this.state.task.cucuta}</p>
+              </div>}
+
+
 
               <hr/>
 

@@ -12,6 +12,7 @@ class CreateProject extends Component {
   constructor(props) {
     super(props);
     window.scrollTo(0, 0);
+    if (Meteor.user() == undefined) return;
     this.state = {
       value: [],
       count: 1,
@@ -22,6 +23,10 @@ class CreateProject extends Component {
       thumbnail: '',
       uploadedFileCloudinaryUrl: '',
       requirements: [],
+      andes: '',
+      yopal: '',
+      cucuta: '',
+      valle: '',
       stage: 'Gestación'
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -106,10 +111,12 @@ class CreateProject extends Component {
   }
 
   render() {
+    if (Meteor.user() == undefined) {
+      return <Redirect push to="/projects"/>;
+    }
     if (this.state.redirect) {
       return <Redirect push to="/projects"/>;
     }
-
     return (
       <div>
         <NavBar/>
@@ -122,21 +129,42 @@ class CreateProject extends Component {
                      aria-labelledby="publica" required
                      value={this.state.name}
                      onChange={(event) => this.setState({name: event.target.value})}
-                     placeholder="Palabra..."/>
+                     placeholder="Término..."/>
             </fieldset>
             <fieldset>
               <input type="text" className="form-control" id="description"
                      aria-labelledby="publica" required
                      value={this.state.description}
                      onChange={(event) => this.setState({description: event.target.value})}
-                     placeholder="Significado indígena..."/>
+                     placeholder="Significado tradicional/RAE..."/>
             </fieldset>
             <fieldset>
-              <input type="text" className="form-control" id="slogan"
-                     aria-labelledby="publica" required
-                     value={this.state.slogan}
-                     onChange={(event) => this.setState({slogan: event.target.value})}
-                     placeholder="Significado cotidiano..."/>
+              <input type="text" className="form-control" id="andes"
+                     aria-labelledby="publica"
+                     value={this.state.andes}
+                     onChange={(event) => this.setState({andes: event.target.value})}
+                     placeholder="Significado gente de los Andes(si lo tiene)..."/>
+            </fieldset>
+            <fieldset>
+              <input type="text" className="form-control" id="valle"
+                     aria-labelledby="publica"
+                     value={this.state.valle}
+                     onChange={(event) => this.setState({valle: event.target.value})}
+                     placeholder="Significado gente del Valle(si lo tiene)..."/>
+            </fieldset>
+            <fieldset>
+              <input type="text" className="form-control" id="yopal"
+                     aria-labelledby="publica"
+                     value={this.state.yopal}
+                     onChange={(event) => this.setState({yopal: event.target.value})}
+                     placeholder="Significado gente de Yopal(si lo tiene)..."/>
+            </fieldset>
+            <fieldset>
+              <input type="text" className="form-control" id="cucuta"
+                     aria-labelledby="publica" 
+                     value={this.state.cucuta}
+                     onChange={(event) => this.setState({cucuta: event.target.value})}
+                     placeholder="Significado gente de Cúcuta(si lo tiene)..."/>
             </fieldset>
             {/*<fieldset>*/}
               {/*<input type="text" className="form-control" id="description"*/}
