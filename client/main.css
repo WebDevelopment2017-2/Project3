@@ -453,11 +453,11 @@ li {
 .imageMain{
     margin-top: 80px;
 }
-#sendMailCreator{
+.sendMailCreator{
     color: white;
     background-color:black !important;
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding: 6px 10px 6px 10px;
+    font-size: 16px;
     width: 100%;
 }
 

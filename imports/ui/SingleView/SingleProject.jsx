@@ -168,7 +168,7 @@ class SingleProject extends Component {
                       <div className="card-body">
                         <div className="row">
                           <div className="col-lg-12">
-                            <a type="submit" onClick={() => this.deleteProject()} className="deleteProjectButt">Eliminar
+                            <a onClick={() => this.deleteProject()} className="deleteProjectButt">Eliminar
                               palabra</a>
                           </div>
                         </div>
@@ -182,9 +182,8 @@ class SingleProject extends Component {
                     <div className="card-body">
                       <div className="row">
                         <div className="col-lg-12">
-                          <a type="submit" href={"mailto:" + this.state.task.email}
-                             id="sendMailCreator"
-                             className="btn-default">Enviar correo al creador</a>
+                          <a href={"mailto:" + this.state.task.email}
+                             className="sendMailCreator">Enviar correo al creador</a>
                         </div>
                       </div>
                     </div>
