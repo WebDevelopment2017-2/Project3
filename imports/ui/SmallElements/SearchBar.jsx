@@ -54,17 +54,10 @@ export default class SearchBar extends React.Component {
       <div className="container">
         <form onSubmit={this.handleSubmit}>
           <div className="row">
-            <div class="form-group has-search formSearchBar">
-              <span class="fa fa-search form-control-feedback"></span>
-              <input type="text" class="form-control" placeholder="Buscar término..."/>
+            <div className="form-group has-search formSearchBar">
+              <span className="fa fa-search form-control-feedback"></span>
+              <input type="text" className="form-control" placeholder="Buscar término..."/>
             </div>
-            {/*<div className="col-md-10">*/}
-              {/*<input type="text" className="form-control" value={this.state.value}*/}
-                     {/*onChange={this.handleChange} placeholder="Escribe el término a buscar..."/>*/}
-            {/*</div>*/}
-            {/*<div className="col-md-1">*/}
-              {/*<input type="submit" className="btn btn-primary" value="Buscar término"/>*/}
-            {/*</div>*/}
           </div>
         </form>
       </div>

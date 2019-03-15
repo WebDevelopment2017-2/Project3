@@ -7,6 +7,7 @@ import {Meteor} from 'meteor/meteor';
 import NavBar from '../SmallElements/NavBar.jsx'
 import Captcha from "../SmallElements/Captcha";
 import SearchBar from "../SmallElements/SearchBar";
+import axios from "axios/index";
 
 // ProjectsView component - represents the whole app
 class ProjectsView extends Component {
@@ -15,6 +16,7 @@ class ProjectsView extends Component {
     super(props);
     this.state = {
       hideCompleted: false,
+      searchText: ''
     };
   }
 
@@ -26,9 +28,9 @@ class ProjectsView extends Component {
 
   renderWords() {
     let filteredTasks = this.props.tasks;
-    if (this.state.hideCompleted) {
-      filteredTasks = filteredTasks.filter(task => !task.checked);
-    }
+
+    filteredTasks = filteredTasks.filter(task => (task.name.toLowerCase().search(this.state.searchText.toLowerCase()) != -1) );
+
     return filteredTasks.map((task) => {
       const currentUserId = this.props.currentUser && this.props.currentUser._id;
       const showPrivateButton = task.owner === currentUserId;
@@ -86,7 +88,20 @@ class ProjectsView extends Component {
           </div>
         </div>
 
-        <SearchBar/>
+        <div className="container">
+          <form onSubmit={(e) => e.preventDefault()}>
+            <div className="row">
+              <div className="form-group has-search formSearchBar">
+                <span className="fa fa-search form-control-feedback"></span>
+                <input type="text"
+                       value={this.state.searchText}
+                       onSubmit={(e) => e.preventDefault()}
+                       onChange={(event) => this.setState({searchText: event.target.value})}
+                       className="form-control" placeholder="Buscar término..."/>
+              </div>
+            </div>
+          </form>
+        </div>
 
         <div className="row">
           {this.renderWords()}
