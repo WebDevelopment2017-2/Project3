@@ -215,7 +215,7 @@ class SingleProject extends Component {
                 {/*<hr/>*/}
                 {/*<h3>Definición para la gente de Cúcuta:</h3><p className="lead">{this.state.task.cucuta}</p>*/}
               {/*</div>}*/}
-              
+
 
               {/*<!-- Comments Form -->*/}
               <div className="card my-4">
@@ -260,6 +260,7 @@ class SingleProject extends Component {
                   ) : null
               }
 
+              {this.state.task.origen &&
               <div className="card my-4">
                 <h5 className="card-header">Origen</h5>
                 <div className="card-body">
@@ -270,6 +271,7 @@ class SingleProject extends Component {
                   </div>
                 </div>
               </div>
+              }
 
               <div className="card my-4">
                     <h5 className="card-header">¿Algo no te gusta?</h5>
