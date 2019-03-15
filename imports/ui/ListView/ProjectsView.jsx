@@ -56,7 +56,7 @@ class ProjectsView extends Component {
     return (
       <div>
         <NavBar/>
-        <Captcha/>
+        {/*<Captcha/>*/}
         <div className="row my-4">
           <div className="col-lg-4">
             <img className="img-fluid rounded imageMain" src="https://i.ibb.co/4ZsnhDC/asd.jpg" alt=""/>

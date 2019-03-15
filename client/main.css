@@ -422,25 +422,25 @@ li {
 }
 
 #deleteProjectButt {
-    cursor: pointer;
-    width: 90%;
-    border: none;
-    background: #c82333;
-    color: #FFF;
-    margin: 0 0 5px;
-    padding: 10px;
-    font-size: 16px;
+    cursor: pointer !important;
+    width: 90% !important;
+    border: none !important;
+    background: #c82333 !important;
+    color: #FFF !important;
+    margin: 0 0 5px !important;
+    padding: 10px !important;
+    font-size: 16px !important;
 }
 
 #deleteProjectButt:hover {
-    background: #3a0f0f;
-    -webkit-transition: background 0.3s ease-in-out;
-    -moz-transition: background 0.3s ease-in-out;
-    transition: background-color 0.3s ease-in-out;
+    background: #3a0f0f !important;
+    -webkit-transition: background 0.3s ease-in-out !important;
+    -moz-transition: background 0.3s ease-in-out !important;
+    transition: background-color 0.3s ease-in-out !important;
 }
 
 #deleteProjectButt:active {
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5) !important;
 }
 .crop{
     /*width:100px;*/

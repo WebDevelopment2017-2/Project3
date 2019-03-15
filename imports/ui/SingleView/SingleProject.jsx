@@ -178,7 +178,7 @@ class SingleProject extends Component {
                     <div className="row">
                       <div className="col-lg-12">
                         <a type="submit" href={"mailto:" + Meteor.user().emails[0].address}
-                           style={{color:'white', backgroundColor:'black', paddingTop: '3px', paddingBottom: '3px', width: '100%' }}
+                           style={{color:'white', backgroundColor:'black !important', paddingTop: '3px', paddingBottom: '3px', width: '100%' }}
                            className="btn-default">Enviar correo al creador</a>
                       </div>
                     </div>
