@@ -30,6 +30,7 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-transition-group": "^2.2.1",
+    "remove-accents": "^0.4.2",
     "superagent": "^3.8.0"
   },
   "devDependencies": {

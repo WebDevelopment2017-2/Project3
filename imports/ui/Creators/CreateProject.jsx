@@ -133,7 +133,7 @@ class CreateProject extends Component {
             </fieldset>
             <fieldset>
               <input type="text" className="form-control" id="description"
-                     aria-labelledby="publica" required
+                     aria-labelledby="publica"
                      value={this.state.description}
                      onChange={(event) => this.setState({description: event.target.value})}
                      placeholder="Significado tradicional/RAE..."/>
@@ -161,7 +161,7 @@ class CreateProject extends Component {
             </fieldset>
             <fieldset>
               <input type="text" className="form-control" id="cucuta"
-                     aria-labelledby="publica" 
+                     aria-labelledby="publica"
                      value={this.state.cucuta}
                      onChange={(event) => this.setState({cucuta: event.target.value})}
                      placeholder="Significado gente de Cúcuta(si lo tiene)..."/>

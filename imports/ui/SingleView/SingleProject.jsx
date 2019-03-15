@@ -123,8 +123,11 @@ class SingleProject extends Component {
               {/*<!-- Preview Image -->*/}
               {/*<img className="img-fluid rounded" src={this.state.task.thumbnail} alt="Project image"/>*/}
 
-              <hr/>
-              <h3>Definición tradicional/RAE:</h3><p className="lead">{this.state.task.description}</p>
+              { this.state.task.description &&
+              <div>
+                <hr/>
+                <h3>Definición tradicional/RAE:</h3><p className="lead">{this.state.task.description}</p>
+              </div>}
 
               { this.state.task.andes &&
               <div>
