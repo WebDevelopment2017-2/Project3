@@ -78,13 +78,13 @@ class SingleProject extends Component {
   handleSubmit(event) {
     event.preventDefault();
     let b = this.state.value;
-    Meteor.call('comments.insert', this.state.value, this.state.task._id, function (error, result) {
+    Meteor.call('comments.insert', this.state.value, this.state.task._id,  (error, result) => {
       if (error) {
         Bert.alert('Debes iniciar sesión para poder comentar!', 'danger', 'growl-top-right');
       }
       else {
         console.log(this.refs)
-        b = "";
+        this.setState({value:''})
       }
     });
     console.log(this.refs)
