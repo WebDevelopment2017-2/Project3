@@ -113,47 +113,109 @@ class SingleProject extends Component {
               <p className="lead">
                 publicada por: {' ' + this.state.task.username}
               </p>
-              
+
 
               {/*<!-- Preview Image -->*/}
               {/*<img className="img-fluid rounded" src={this.state.task.thumbnail} alt="Project image"/>*/}
 
-              { this.state.task.description &&
-              <div>
-                <hr/>
-                <h3>Definición tradicional/RAE:</h3><p className="lead">{this.state.task.description}</p>
-              </div>}
-
-              { this.state.task.andes &&
-              <div>
-                <hr/>
-                <h3>Definición para la gente de los Andes:</h3><p className="lead">{this.state.task.andes}</p>
-              </div>}
+              {/*{ this.state.task.description &&*/}
+              {/*<div>*/}
+                {/*<hr/>*/}
+                {/*<h3>Definición tradicional/RAE:</h3><p className="lead">{this.state.task.description}</p>*/}
+              {/*</div>}*/}
 
 
-              { this.state.task.valle &&
-              <div>
-                <hr/>
-                <h3>Definición para la gente del Valle:</h3><p className="lead">{this.state.task.valle}</p>
-              </div>}
+              {this.state.task.description &&
+              <div className="card my-8">
+                <h5 className="card-header">Definición tradicional/RAE:</h5>
+                <div className="card-body">
+                  <div className="row">
+                    <div className="col-lg-12">
+                      <p>{this.state.task.description}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              }
+
+              {this.state.task.andes &&
+              <div className="card my-8">
+                <h5 className="card-header">Definición para la gente de los Andes:</h5>
+                <div className="card-body">
+                  <div className="row">
+                    <div className="col-lg-12">
+                      <p>{this.state.task.andes}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              }
+
+              {/*{ this.state.task.andes &&*/}
+              {/*<div>*/}
+                {/*<hr/>*/}
+                {/*<h3>Definición para la gente de los Andes:</h3><p className="lead">{this.state.task.andes}</p>*/}
+              {/*</div>}*/}
+
+              {this.state.task.valle &&
+              <div className="card my-8">
+                <h5 className="card-header">Definición para la gente del Valle:</h5>
+                <div className="card-body">
+                  <div className="row">
+                    <div className="col-lg-12">
+                      <p>{this.state.task.valle}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              }
 
 
-              { this.state.task.yopal &&
-              <div>
-                <hr/>
-                <h3>Definición para la gente de Yopal:</h3><p className="lead">{this.state.task.yopal}</p>
-              </div>}
+              {/*{ this.state.task.valle &&*/}
+              {/*<div>*/}
+                {/*<hr/>*/}
+                {/*<h3>Definición para la gente del Valle:</h3><p className="lead">{this.state.task.valle}</p>*/}
+              {/*</div>}*/}
 
 
-              { this.state.task.cucuta &&
-              <div>
-                <hr/>
-                <h3>Definición para la gente de Cúcuta:</h3><p className="lead">{this.state.task.cucuta}</p>
-              </div>}
+              {this.state.task.yopal &&
+              <div className="card my-8">
+                <h5 className="card-header">Definición para la gente de Yopal:</h5>
+                <div className="card-body">
+                  <div className="row">
+                    <div className="col-lg-12">
+                      <p>{this.state.task.yopal}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              }
 
+              {/*{ this.state.task.yopal &&*/}
+              {/*<div>*/}
+                {/*<hr/>*/}
+                {/*<h3>Definición para la gente de Yopal:</h3><p className="lead">{this.state.task.yopal}</p>*/}
+              {/*</div>}*/}
 
+              {this.state.task.cucuta &&
+              <div className="card my-8">
+                <h5 className="card-header">Definición para la gente de Cúcuta:</h5>
+                <div className="card-body">
+                  <div className="row">
+                    <div className="col-lg-12">
+                      <p>{this.state.task.cucuta}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              }
 
-              <hr/>
+              {/*{ this.state.task.cucuta &&*/}
+              {/*<div>*/}
+                {/*<hr/>*/}
+                {/*<h3>Definición para la gente de Cúcuta:</h3><p className="lead">{this.state.task.cucuta}</p>*/}
+              {/*</div>}*/}
+              
 
               {/*<!-- Comments Form -->*/}
               <div className="card my-4">
@@ -197,6 +259,17 @@ class SingleProject extends Component {
                     </div>
                   ) : null
               }
+
+              <div className="card my-4">
+                <h5 className="card-header">Origen</h5>
+                <div className="card-body">
+                  <div className="row">
+                    <div className="col-lg-12">
+                      <p>{this.state.task.origin}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               <div className="card my-4">
                     <h5 className="card-header">¿Algo no te gusta?</h5>
