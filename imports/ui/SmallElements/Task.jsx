@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import classnames from 'classnames';
 import { Session } from 'meteor/session'
 
+
 // Task component - represents a single todo item
 export default class Task extends Component {
 

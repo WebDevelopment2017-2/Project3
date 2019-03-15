@@ -5,6 +5,7 @@ import {Tasks} from '/imports/api/tasks.jsx';
 import ReactDOM from 'react-dom';
 import {Meteor} from 'meteor/meteor';
 import NavBar from '../SmallElements/NavBar.jsx'
+import RemoveAccents from 'remove-accents'
 import Captcha from "../SmallElements/Captcha";
 import SearchBar from "../SmallElements/SearchBar";
 import axios from "axios/index";
@@ -28,8 +29,8 @@ class ProjectsView extends Component {
 
   renderWords() {
     let filteredTasks = this.props.tasks;
-
-    filteredTasks = filteredTasks.filter(task => (task.name.toLowerCase().search(this.state.searchText.toLowerCase()) != -1) );
+    let searchText = RemoveAccents.remove(this.state.searchText.toLowerCase().trim())
+    filteredTasks = filteredTasks.filter(task => (RemoveAccents.remove(task.name.toLowerCase().trim()).search(searchText) != -1) );
 
     return filteredTasks.map((task) => {
       const currentUserId = this.props.currentUser && this.props.currentUser._id;
