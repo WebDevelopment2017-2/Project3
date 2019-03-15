@@ -18,6 +18,7 @@ class CreateProject extends Component {
       name: '',
       slogan: '',
       description: '',
+      email: Meteor.user().emails[0].address,
       thumbnail: '',
       uploadedFileCloudinaryUrl: '',
       requirements: [],

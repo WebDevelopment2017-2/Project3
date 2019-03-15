@@ -1,19 +1,19 @@
 import React, {Component, PropTypes} from 'react';
-import { Meteor } from 'meteor/meteor';
+import {Meteor} from 'meteor/meteor';
 import NavBar from '../SmallElements/NavBar.jsx'
-import { Redirect } from 'react-router';
-import { Comments } from '/imports/api/comments';
+import {Redirect} from 'react-router';
+import {Comments} from '/imports/api/comments';
 import Comment from "../SmallElements/Comment";
-import { createContainer } from 'meteor/react-meteor-data';
-import { Session } from 'meteor/session'
-import { confirmAlert } from 'react-confirm-alert'; // Import
+import {createContainer} from 'meteor/react-meteor-data';
+import {Session} from 'meteor/session'
+import {confirmAlert} from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css' // Import css
 
 class SingleProject extends Component {
 
   constructor(props) {
     super(props);
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
     this.state = {
       task: props.location.query,
       value: '',
@@ -41,14 +41,14 @@ class SingleProject extends Component {
   }
 
   sendMail() {
-      // Client: Asynchronously send an email.
-      // Meteor.call(
-      //     'sendEmail',
-      //     'Alice <dianasbeltran@gmail.com>',
-      //     'admin@luisplazas.co',
-      //     'Hello from Meteor!',
-      //     'This is a test of Email.send.'
-      // );
+    // Client: Asynchronously send an email.
+    // Meteor.call(
+    //     'sendEmail',
+    //     'Alice <dianasbeltran@gmail.com>',
+    //     'admin@luisplazas.co',
+    //     'Hello from Meteor!',
+    //     'This is a test of Email.send.'
+    // );
   }
 
   deleteProject() {
@@ -63,14 +63,14 @@ class SingleProject extends Component {
     })
   }
 
-  submitDelete(){
+  submitDelete() {
     let b = this;
     Meteor.call('tasks.remove', this.state.task._id, function (error, result) {
       if (error) {
-        Bert.alert( 'Debes iniciar sesión para poder publicar!', 'danger', 'growl-top-right' );
+        Bert.alert('Debes iniciar sesión para poder publicar!', 'danger', 'growl-top-right');
       }
-      else{
-        b.setState({task:undefined})
+      else {
+        b.setState({task: undefined})
       }
     });
   }
@@ -80,9 +80,9 @@ class SingleProject extends Component {
     let b = this.state.value;
     Meteor.call('comments.insert', this.state.value, this.state.task._id, function (error, result) {
       if (error) {
-        Bert.alert( 'Debes iniciar sesión para poder comentar!', 'danger', 'growl-top-right' );
+        Bert.alert('Debes iniciar sesión para poder comentar!', 'danger', 'growl-top-right');
       }
-      else{
+      else {
         console.log(this.refs)
         b = "";
       }
@@ -99,123 +99,122 @@ class SingleProject extends Component {
     return (
       <div>
         <NavBar/>
-        <div className="container" style={{marginTop:'10px'}}>
+        <div className="container" style={{marginTop: '10px'}}>
 
           <div className="row">
 
             {/*<!-- Post Content Column -->*/}
-            <div className="col-lg-8">
+            <div className="col-lg-8 col-md-8 col-sm-8">
 
               {/*<!-- Title -->*/}
-              <h1 className="mt-4" style={{fontSize:'64px'}}>{this.state.task.name}</h1>
+              <h1 className="mt-4" style={{fontSize: '64px'}}>{this.state.task.name}</h1>
 
               {/*<!-- Author -->*/}
               <p className="lead">
-                publicada por: {' '+this.state.task.username}
+                publicada por: {' ' + this.state.task.username}
               </p>
 
               <hr/>
 
-                {/*<!-- Date/Time -->*/}
-                <p>Creada: {new Date(this.state.task.createdAt).toDateString()}</p>
+              {/*<!-- Date/Time -->*/}
+              <p>Creada: {new Date(this.state.task.createdAt).toDateString()}</p>
 
 
-                  {/*<!-- Preview Image -->*/}
-                  {/*<img className="img-fluid rounded" src={this.state.task.thumbnail} alt="Project image"/>*/}
+              {/*<!-- Preview Image -->*/}
+              {/*<img className="img-fluid rounded" src={this.state.task.thumbnail} alt="Project image"/>*/}
 
-                    <hr/>
+              <hr/>
 
-                      {/*<!-- Post Content -->*/}
-                      <h3>Definición indígena:</h3><p className="lead">{this.state.task.description}</p>
+              {/*<!-- Post Content -->*/}
+              <h3>Definición indígena:</h3><p className="lead">{this.state.task.description}</p>
 
               <hr/>
 
               <h3>Definición cotidiana:</h3><p className="lead">{this.state.task.slogan}</p>
 
-                      <hr/>
+              <hr/>
 
-                        {/*<!-- Comments Form -->*/}
-                        <div className="card my-4">
-                          <h5 className="card-header">Deja un comentario!</h5>
-                          <div className="card-body">
-                            <form onSubmit={this.handleSubmit}>
-                              <div className="form-group">
-                                <label htmlFor="txa" style={{color:'white'}}> text</label>
-                                <textarea id="txa" value={this.state.value} className="form-control" required rows="3" onChange={(event) => this.setState({value: event.target.value})}></textarea>
-                              </div>
-                              <button type="submit" className="btn btn-primary" style={{color:'white', backgroundColor:'black'}}>Enviar</button>
-                            </form>
-                          </div>
-                        </div>
+              {/*<!-- Comments Form -->*/}
+              <div className="card my-4">
+                <h5 className="card-header">Deja un comentario!</h5>
+                <div className="card-body">
+                  <form onSubmit={this.handleSubmit}>
+                    <div className="form-group">
+                      <label htmlFor="txa" style={{color: 'white'}}> text</label>
+                      <textarea id="txa" value={this.state.value} className="form-control" required rows="3"
+                                onChange={(event) => this.setState({value: event.target.value})}></textarea>
+                    </div>
+                    <button type="submit" className="btn btn-primary"
+                            style={{color: 'white', backgroundColor: 'black'}}>Enviar
+                    </button>
+                  </form>
+                </div>
+              </div>
 
-                        {/*<!-- Single Comment -->*/}
-                        {this.renderComments()}
-                        {/*<Comment/>*/}
+              {/*<!-- Single Comment -->*/}
+              {this.renderComments()}
+              {/*<Comment/>*/}
             </div>
 
             {/*<!-- Sidebar Widgets Column -->*/}
-            <div className="col-md-4">
+            <div className="col-lg-4 col-md-4 col-sm-4">
 
               {/*<!-- Admin Widget -->*/}
               {
                 (Meteor.user() && this.state.task.username === Meteor.user().username) ?
                   (
-                <div className="card my-4">
-                  <h5 className="card-header">Administración</h5>
-                  <div className="card-body">
-                    <div className="row">
-                      <div className="col-lg-12">
-                        <a type="submit" onClick={() => this.deleteProject()} className="deleteProjectButt">Eliminar palabra</a>
+                    <div className="card my-4">
+                      <h5 className="card-header">Administración</h5>
+                      <div className="card-body">
+                        <div className="row">
+                          <div className="col-lg-12">
+                            <a type="submit" onClick={() => this.deleteProject()} className="deleteProjectButt">Eliminar
+                              palabra</a>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
                   ) : null
               }
 
-                {/*<!-- Participation Widget -->*/}
-              { Meteor.user() ?
-                (
-                <div className="card my-4">
-                  <h5 className="card-header">¿Algo no te gusta?</h5>
-                  <div className="card-body">
-                    <div className="row">
-                      <div className="col-lg-12">
-                        <a type="submit" href={"mailto:" + Meteor.user().emails[0].address}
-                           id="sendMailCreator"
-                           className="btn-default">Enviar correo al creador</a>
+              <div className="card my-4">
+                    <h5 className="card-header">¿Algo no te gusta?</h5>
+                    <div className="card-body">
+                      <div className="row">
+                        <div className="col-lg-12">
+                          <a type="submit" href={"mailto:" + this.state.task.email}
+                             id="sendMailCreator"
+                             className="btn-default">Enviar correo al creador</a>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-                ) : null
-              }
+              </div>
 
               {/*<!-- Requirements Widget -->*/}
               {/*<div className="card my-4">*/}
-                {/*<h5 className="card-header">Requerimientos</h5>*/}
-                {/*<div className="card-body">*/}
-                  {/*<div className="row">*/}
-                    {/*<div className="col-lg-12">*/}
-                      {/*<ul className="list-unstyled mb-12">*/}
-                        {/*{*/}
-                          {/*this.state.task.requirements.map((task,i) => {*/}
-                            {/*const currentUserId = this.props.currentUser && this.props.currentUser._id;*/}
-                            {/*// const showPrivateButton = task.owner === currentUserId;*/}
-                            {/*return (*/}
+              {/*<h5 className="card-header">Requerimientos</h5>*/}
+              {/*<div className="card-body">*/}
+              {/*<div className="row">*/}
+              {/*<div className="col-lg-12">*/}
+              {/*<ul className="list-unstyled mb-12">*/}
+              {/*{*/}
+              {/*this.state.task.requirements.map((task,i) => {*/}
+              {/*const currentUserId = this.props.currentUser && this.props.currentUser._id;*/}
+              {/*// const showPrivateButton = task.owner === currentUserId;*/}
+              {/*return (*/}
 
-                                {/*<li className="col-lg-12" style={{textAlign:'justify'}}>*/}
-                                  {/*{task}*/}
-                                {/*</li>*/}
+              {/*<li className="col-lg-12" style={{textAlign:'justify'}}>*/}
+              {/*{task}*/}
+              {/*</li>*/}
 
 
-                            {/*);*/}
-                          {/*})*/}
-                        {/*}*/}
-                      {/*</ul>*/}
-                    {/*</div>*/}
-                  {/*</div>*/}
-                {/*</div>*/}
+              {/*);*/}
+              {/*})*/}
+              {/*}*/}
+              {/*</ul>*/}
+              {/*</div>*/}
+              {/*</div>*/}
+              {/*</div>*/}
               {/*</div>*/}
             </div>
 
